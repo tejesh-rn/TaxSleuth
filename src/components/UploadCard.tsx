@@ -38,7 +38,9 @@ const UploadCard: React.FC<UploadCardProps> = ({ onAnalyze, isLoading }) => {
   };
 
   const processFile = (file: File) => {
-    if (!file.type.startsWith('image/')) {
+    const isImageMime = file.type.startsWith('image/');
+    const isImageExt = file.name.match(/\.(jpg|jpeg|png|gif|webp|heic|heif)$/i);
+    if (!isImageMime && !isImageExt) {
       alert('Please upload an image file.');
       return;
     }

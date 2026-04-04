@@ -17,7 +17,7 @@ export const analyzeBill = async (file: File): Promise<AnalysisResponse> => {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+  const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite" });
 
   // Safe and fast base64 conversion for browser
   const base64String = await new Promise<string>((resolve, reject) => {
