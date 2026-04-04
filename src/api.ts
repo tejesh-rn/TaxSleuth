@@ -105,7 +105,7 @@ Return your response strictly as a pure JSON object. No Markdown blocks, no back
     if (err.message && (err.message.includes("Bill not detected") || err.message.includes("VITE_GEMINI_API"))) {
       throw err;
     }
-    // Propagate actual error up to the UI 
-    throw new Error(`Processing Failed: ${err?.message || "Unknown error occurred"}`);
+    // Propagate a generic, user-friendly error to the UI 
+    throw new Error("Something went wrong, please try again later.");
   }
 };
