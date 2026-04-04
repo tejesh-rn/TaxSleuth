@@ -78,8 +78,18 @@ Return your response strictly as a pure JSON object. No Markdown blocks, no back
       throw new Error("Bill not detected in image.");
     }
 
-    let isGstValid = data.gst_valid || false;
     let issues = data.issues || [];
+    let gstin = data.gstin || 'NOT_FOUND';
+    let isGstValid = data.gst_valid || false;
+
+    // Strict 15-digit alphanumeric validation
+    if (gstin !== 'NOT_FOUND') {
+      const gstinRegex = /^[A-Z0-9]{15}$/i;
+      if (!gstinRegex.test(gstin)) {
+        isGstValid = false;
+        issues.push("Invalid GSTIN format: Must be exactly 15 alphanumeric characters.");
+      }
+    }
 
     return {
       gst_valid: isGstValid,
