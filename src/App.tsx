@@ -53,6 +53,22 @@ function App() {
         </h1>
       </div>
 
+      {/* LinkedIn Profile Redirect */}
+      <div className="absolute top-6 right-6 md:top-10 md:right-10 z-20">
+        <a
+          href="https://www.linkedin.com/in/tejeshrn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block transition-transform duration-300 hover:scale-110 hover:-translate-y-1 drop-shadow-lg shadow-black/20"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+            alt="LinkedIn"
+            className="w-8 h-8 md:w-10 md:h-10 rounded-sm"
+          />
+        </a>
+      </div>
+
       <main className="z-10 w-full max-w-sm">
         <div className="bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl relative overflow-hidden min-h-[280px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
